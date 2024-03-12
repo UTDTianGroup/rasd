@@ -7,7 +7,7 @@ We use the AVA-Active Speaker Dataset (AVA-ASD) and noise samples from the RNA D
 ### Download AVA-ASD and RNA datasets
 
 1. Please follow instructions from the [GitHub page of TalkNet](https://github.com/TaoRuijie/TalkNet-ASD#data-preparation) to setup the AVA-Active Speaker dataset.
-2. Download RNA dataset from [here](https://drive.google.com/drive/folders/1PW9cZFt0F-9S79f3gsll6IILbIadqg-H?usp=share_link).
+2. Download RNA dataset from [here](https://drive.google.com/file/d/13QKFeUV0cWMfSCR3H0F6qFh37PEBnEij/view?usp=sharing).
 
 ## Installation and Execution
 
@@ -26,7 +26,6 @@ pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --e
 ```
 pip install -r requirement.txt
 ```
-4. Downoad the model checkpoint (model_0025.model) from [here](https://drive.google.com/drive/folders/1PW9cZFt0F-9S79f3gsll6IILbIadqg-H?usp=share_link) and place it in the folder `exps/exp1/model/`
 5. Train rASD:
 ```
 python train_rASD.py --dataPathAVA /path/to/ava-asd-dataset/ --rnaDirPath /path/to/rna-dataset/ --savePath /path/to/output/ 
@@ -35,3 +34,4 @@ python train_rASD.py --dataPathAVA /path/to/ava-asd-dataset/ --rnaDirPath /path/
 ```
 python train_rASD.py --dataPathAVA /path/to/ava-asd-dataset/ --rnaDirPath /path/to/rna-dataset/ --evaluation --evalModelPath /path/to/evaluation-checkpoint/
 ```
+A trained checkpoint is available [here](https://drive.google.com/file/d/1TOdZnQhS6DgvulZhdOdo_UAt3ccrtN_g/view?usp=sharing).
