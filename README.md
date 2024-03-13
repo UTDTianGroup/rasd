@@ -35,3 +35,11 @@ python train_rASD.py --dataPathAVA /path/to/ava-asd-dataset/ --rnaDirPath /path/
 python train_rASD.py --dataPathAVA /path/to/ava-asd-dataset/ --rnaDirPath /path/to/rna-dataset/ --evaluation --evalModelPath /path/to/evaluation-checkpoint/
 ```
 A trained checkpoint is available [here](https://drive.google.com/file/d/1TOdZnQhS6DgvulZhdOdo_UAt3ccrtN_g/view?usp=sharing).
+
+### Demo
+
+We provide a demonstration code that can be used to test our work on a video file. This code is modified from the [demonstration code provided by TalkNet](https://github.com/TaoRuijie/TalkNet-ASD/blob/main/demoTalkNet.py). Please use the following command to run the demonstration.
+```
+python demorASD.py --videoName 4L5Yv6gADuM --videoFolder demo --pretrainModel exps/exp1/model/model_0025.model
+```
+The output video file should be present at the path `demo/4L5Yv6gADuM/pyavi/video_out.avi`.

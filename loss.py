@@ -12,10 +12,15 @@ class lossAV(nn.Module):
 		x = x.squeeze(1)
 		x = self.FC(x)
 		if labels == None:
-			predScore = x[:,1]
-			predScore = predScore.t()
-			predScore = predScore.view(-1).detach().cpu().numpy()
-			return predScore
+			# predScore = x[:,1]
+			# predScore = predScore.t()
+			# predScore = predScore.view(-1).detach().cpu().numpy()
+			predScore = F.softmax(x, dim = -1)
+			predLabel = torch.round(F.softmax(x, dim = -1))[:,1]
+			predLabel = predLabel.view(-1).detach().cpu().numpy()
+			# print('x ', x)
+			# print('predLabel ', predLabel)
+			return predLabel
 		else:
 			nloss = self.criterion(x, labels)
 			predScore = F.softmax(x, dim = -1)

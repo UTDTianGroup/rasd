@@ -76,6 +76,7 @@ class rASD_Model(nn.Module):
             #Add 1e-10 to remove the possibility of nan in the gt_masks
             mixAudioMagFeature = mixAudioMagFeature + 1e-10
             origAudioMagFeature = origAudioMagFeature + 1e-10
+            # print('mixuaudio mag feature shape in train ', mixAudioMagFeature.shape)
             
             visualEmbed, visualEmbed512 = self.model.forward_visual_frontend(visualFeature.cuda())
             visualEmbedMean = torch.mean(visualEmbed512, dim=1, keepdim = True)

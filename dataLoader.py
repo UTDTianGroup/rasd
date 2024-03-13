@@ -100,6 +100,7 @@ def generate_spectrogram_magphase(audio, stft_frame, stft_hop, with_phase=True):
     spectro = librosa.core.stft(audio, hop_length=stft_hop, n_fft=stft_frame, center=True)
     spectro_mag, spectro_phase = librosa.core.magphase(spectro)
     spectro_mag = np.expand_dims(spectro_mag, axis=0)
+    # print('spectro mag shape in the data loader ', spectro_mag.shape)
     if with_phase:
         spectro_phase = np.expand_dims(np.angle(spectro_phase), axis=0)
         return spectro_mag, spectro_phase
